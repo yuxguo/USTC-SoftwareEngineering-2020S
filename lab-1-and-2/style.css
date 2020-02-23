@@ -1,0 +1,89 @@
+.topbar {
+    width: 1140px;
+    height: 40px;
+    padding: 15px 40px 15px 40px;
+    background-color: #97a5bc;  
+}
+.inp-time {
+    display: inline-block;
+    margin: 0px 17px 0px 0px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.10);
+    border: none;
+    border-radius: 5px;
+    width: 70px;
+    height: 40px;
+}
+.inp-time label {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #222222;
+    width: 32px;
+    height: 22px;
+}
+.inp-time input {
+    border: none;
+    font-family: PingFangSC-Regular;
+    color: #AFAFAF;
+    font-size: 16px;
+    width: 20px;
+    margin: 9px 13px 9px 9px;
+}
+.btn {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color:white;
+    background-color: #2188e9;
+    border-radius: 5px;
+    border: none;
+    border-width: 0px;
+    width: 98px;
+    height: 40px;
+    margin: 0px 17px 0px 0px;
+    padding: 0px;
+}
+.btn1 {
+    display: none;
+}
+.btn2 {
+    display: none;
+    background-color: #DD2E1D;
+    margin-right: 17px;
+    float: right;
+}
+.btn3 {
+    display: none;
+    background-color: #FFB020;
+    margin-right: 17px;
+    float: right;
+}
+
+.hintshow {
+    font-family: PingFangSC-Regular;
+    color: #FFFFFF;
+    font-size: 16px;
+    display: inline-block;
+    margin-right: 17px;
+}
+
+.timeshow {
+    width: 960px;
+    height: 200px;
+    background-color: #f2f4f7;
+    padding: 115px 129px 125px 131px;
+    margin: 0px;
+    border: none;
+    font-family: PTMono-Bold;
+    color: #333333;
+    font-size: 200px;
+    text-align: center;
+}
+
+/* remove up arrow and down arrow */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}

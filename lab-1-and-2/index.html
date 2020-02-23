@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<head>
+    <title>计时器</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="text/javascript" src="app.js"></script>
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="inp-time">
+            <input type="number" value="0" id="hour" max="99" min="0" step="1" ><label for="hour">时</label>
+        </div>
+        <div class="inp-time">
+            <input type="number" value="0" id="minute" max="59" min="0" step="1"><label for="minute">分</label>
+        </div>
+        <div class="inp-time">
+            <input type="number" value="0" id="second" max="59" min="0" step="1"><label for="second">秒</label>
+        </div>
+        <div class="hintshow" id="hint">倒计时</div>
+        <button class="btn" type="button" id="countup">开始正计时</button>
+        <button class="btn" type="button" id="countdown">开始倒计时</button>
+        <button class="btn btn1" type="button" id="resume">恢复计时器</button>
+        <button class="btn btn1" type="button" id="pause">暂停计时器</button>
+        <button class="btn btn3" type="button" id="restart">重新再记时</button>
+        <button class="btn btn2" type="button" id="clear">清空倒计时</button>
+    </div>
+    <div class="timeshow" id="time">00:00:00</div>
+</body>
