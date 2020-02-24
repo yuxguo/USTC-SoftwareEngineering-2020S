@@ -9,6 +9,13 @@ window.onload = function() {
     var hint = document.getElementById("hint");
     var time = document.getElementById("time");
 
+    // 同步当前状态
+    var state;
+    const BEFORESTART = 0;
+    const PAUSING = 1;
+    const TIMING = 2;
+    const ENDTIMING = 3;
+
     // 同步记时方向
     const UP = 0;
     const DOWN = 1;
@@ -63,6 +70,22 @@ window.onload = function() {
         timing();
     }
 
+    // 键盘控制
+    document.onkeydown = function(event) {
+        event = event || window.event;
+        var code = event.keyCode;
+        if (state == BEFORESTART && code == 13) {
+            countup.click();
+        }
+        else if (state == TIMING && code == 32) {
+            pause.click();
+        }
+        else if (state == PAUSING && code == 32) {
+            resume.click();
+        }
+        
+    }
+
     // 默认进入开始模式
     beforeStart();
 
@@ -70,6 +93,7 @@ window.onload = function() {
 
     // finished
     function beforeStart() {
+        state = BEFORESTART;
         // 设置显示项
         for (var i = 0; i<inps.length; ++i) {
             inps[i].style.display = "inline-block";
@@ -87,6 +111,7 @@ window.onload = function() {
 
     // finished
     function pausing() {
+        state = PAUSING;
         // 设置显示项
         for (var i = 0; i<inps.length; ++i) {
             inps[i].style.display = "none";
@@ -112,6 +137,7 @@ window.onload = function() {
 
     // fininsed
     function timing() {
+        state = TIMING;
         // 设置显示项
         for (var i = 0; i<inps.length; ++i) {
             inps[i].style.display = "none";
@@ -136,6 +162,7 @@ window.onload = function() {
 
     // finished
     function endTiming() {
+        state = ENDTIMING;
         // 设置显示项
         for (var i = 0; i<inps.length; ++i) {
             inps[i].style.display = "none";
@@ -156,7 +183,6 @@ window.onload = function() {
         else {
             hint.innerText = "倒计时 " + initTime + "已结束";
         }
-        window.clearInterval(timer);
     }
 
     // finished
@@ -165,16 +191,24 @@ window.onload = function() {
         var minute = document.getElementById("minute").value;
         var second = document.getElementById("second").value;
         if (hour == "" || minute == "" || second == "" || 
-        parseInt(hour)>99 || parseInt(minute)>59 || parseInt(second)>59 ||
         parseInt(hour)<0 || parseInt(minute)<0 || parseInt(second)<0 ||
         (parseInt(hour)==0 && parseInt(minute)==0 && parseInt(second)==0) || 
         hour.indexOf('.')!=-1 || minute.indexOf('.')!=-1 || second.indexOf('.')!=-1 || 
-        hour.indexOf('e')!=-1 || minute.indexOf('e')!=-1 || second.indexOf('e')!=-1) {
+        hour.indexOf('e')!=-1 || minute.indexOf('e')!=-1 || second.indexOf('e')!=-1 ||
+        hour.indexOf('E')!=-1 || minute.indexOf('E')!=-1 || second.indexOf('E')!=-1) {
             document.getElementById("hour").value = "0";
             document.getElementById("minute").value = "0";
             document.getElementById("second").value = "0";
             alert("参数不合法");
             return false;
+        }
+        else if (parseInt(hour)>99 || parseInt(minute)>59 || parseInt(second)>59) {
+            hour = (parseInt(hour)>99) ? "99" : hour;
+            minute = (parseInt(minute)>99) ? "59" : minute;
+            second = (parseInt(second)>99) ? "59" : second;
+            initTime = hour + ":" + minute + ":" + second;
+            curTime = (dir == UP) ? "00:00:00" : initTime;
+            return true;
         }
         else {
             hour = (hour.length == 1) ? "0"+hour : hour;
@@ -217,6 +251,7 @@ window.onload = function() {
             if (dir == UP) {
                 if (curTime == initTime) {
                     endTiming();
+                    window.clearInterval(timer);
                 }
                 else {
                     timing();
@@ -228,6 +263,7 @@ window.onload = function() {
                 }
                 else {
                     timing();
+                    window.clearInterval(timer);
                 }
             }
         }

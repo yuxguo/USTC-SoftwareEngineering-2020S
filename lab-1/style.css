@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+}
+.topbar {
+    width: 1140px;
+    height: 40px;
+    padding: 15px 40px 15px 40px;
+    background-color: #97a5bc;  
+}
+.inp-time {
+    display: inline-block;
+    margin: 0px 17px 0px 0px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.10);
+    border: none;
+    border-radius: 5px;
+    width: 70px;
+    height: 40px;
+}
+.inp-time label {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color: #222222;
+    width: 32px;
+    height: 22px;
+}
+.inp-time input {
+    border: none;
+    font-family: PingFangSC-Regular;
+    color: #AFAFAF;
+    font-size: 16px;
+    width: 20px;
+    margin: 9px 13px 9px 9px;
+}
+.btn {
+    font-family: PingFangSC-Regular;
+    font-size: 16px;
+    color:white;
+    background-color: #2188e9;
+    border-radius: 5px;
+    border: none;
+    border-width: 0px;
+    width: 98px;
+    height: 40px;
+    margin: 0px 17px 0px 0px;
+    padding: 0px;
+}
+
+.timeshow {
+    width: 960px;
+    height: 200px;
+    background-color: #f2f4f7;
+    padding: 127px 130px 113px 130px;
+    margin: 0;
+    border: none;
+    font-family: PTMono-Bold;
+    color: #333333;
+    font-size: 200px;
+    text-align: center;
+    line-height: 200px;
+}

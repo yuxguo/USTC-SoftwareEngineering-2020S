@@ -1,3 +1,6 @@
+body {
+    margin: 0;
+}
 .topbar {
     width: 1140px;
     height: 40px;
@@ -36,11 +39,11 @@
     background-color: #2188e9;
     border-radius: 5px;
     border: none;
-    border-width: 0px;
+    border-width: 0;
     width: 98px;
     height: 40px;
-    margin: 0px 17px 0px 0px;
-    padding: 0px;
+    margin: 0 17 0 0;
+    padding: 0;
 }
 .btn1 {
     display: none;
@@ -70,13 +73,14 @@
     width: 960px;
     height: 200px;
     background-color: #f2f4f7;
-    padding: 115px 129px 125px 131px;
+    padding: 127px 130px 113px 130px;
     margin: 0px;
     border: none;
     font-family: PTMono-Bold;
     color: #333333;
     font-size: 200px;
     text-align: center;
+    line-height: 200px;
 }
 
 /* remove up arrow and down arrow */
