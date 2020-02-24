@@ -1,4 +1,4 @@
-window.onload = function() {
+(function() {
     var inps = document.getElementsByClassName("inp-time");
     var countup = document.getElementById("countup");
     var countdown = document.getElementById("countdown");
@@ -83,7 +83,6 @@ window.onload = function() {
         else if (state == PAUSING && code == 32) {
             resume.click();
         }
-        
     }
 
     // 默认进入开始模式
@@ -154,9 +153,11 @@ window.onload = function() {
         time.innerText = curTime;
         if (dir == UP) {
             hint.innerText = "正在正计时 " + initTime;
+            clear.innerText = "清空正计时";
         }
         else {
             hint.innerText = "正在倒计时 " + initTime;
+            clear.innerText = "清空倒计时";
         }
     }
 
@@ -260,10 +261,10 @@ window.onload = function() {
             else {
                 if (curTime == "00:00:00") {
                     endTiming();
+                    window.clearInterval(timer);
                 }
                 else {
                     timing();
-                    window.clearInterval(timer);
                 }
             }
         }
@@ -273,5 +274,4 @@ window.onload = function() {
         
     }
 
-}
-
+})();
