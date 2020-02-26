@@ -30,7 +30,7 @@
     // 计时器相关
     var mSecond = 0;
     var timer;
-    var interval = 111;
+    var interval = 5;
 
     // onclick 事件绑定函数
     countup.onclick = function() {
@@ -179,10 +179,10 @@
         // 设置显示项，同步全局变量
         time.innerText = curTime;
         if (dir == UP) {
-            hint.innerText = "正计时 " + initTime + "已结束";
+            hint.innerText = "正计时 " + initTime + " 已结束";
         }
         else {
-            hint.innerText = "倒计时 " + initTime + "已结束";
+            hint.innerText = "倒计时 " + initTime + " 已结束";
         }
     }
 
@@ -207,6 +207,9 @@
             hour = (parseInt(hour)>99) ? "99" : hour;
             minute = (parseInt(minute)>99) ? "59" : minute;
             second = (parseInt(second)>99) ? "59" : second;
+            hour = (hour.length == 1) ? "0"+hour : hour;
+            minute = (minute.length == 1) ? "0"+minute : minute;
+            second = (second.length == 1) ? "0"+second : second;
             initTime = hour + ":" + minute + ":" + second;
             curTime = (dir == UP) ? "00:00:00" : initTime;
             return true;
@@ -224,7 +227,7 @@
     
     // finished
     function timeHandler() {
-        if (mSecond >= 999) {
+        if (mSecond > 999) {
             mSecond = 0;
             var hour = parseInt(curTime.split(":")[0]);
             var minute = parseInt(curTime.split(":")[1]);
@@ -271,7 +274,7 @@
         else {
             mSecond += interval;
         }
-        
+
     }
 
 })();
