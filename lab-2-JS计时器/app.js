@@ -30,7 +30,7 @@
     // 计时器相关
     var mSecond = 0;
     var timer;
-    var interval = 5;
+    var interval = 4;
 
     // onclick 事件绑定函数
     countup.onclick = function() {
