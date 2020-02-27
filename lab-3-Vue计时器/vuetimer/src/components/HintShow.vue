@@ -17,13 +17,16 @@ export default {
 <style scoped>
   .hintshow {
     display: inline-block;
-    width: 170px;
+    min-width: 0;
+    max-width: 180px;
     height: 16px;
     font-family: PingFangSC-Regular;
     color: #FFFFFF;
     font-size: 16px;
     line-height: 16px;
-    margin: 12px, 17px, 12px, 0;
     padding: 0;
+    margin-right: 17px;
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
 </style>

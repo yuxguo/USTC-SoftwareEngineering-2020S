@@ -36,6 +36,7 @@
     countup.onclick = function() {
         dir = UP;
         if (checkParameterAndSetVar()) {
+            mSecond = 0;
             timer = window.setInterval(timeHandler, interval);
             timing();
         }
@@ -43,6 +44,7 @@
     countdown.onclick = function() {
         dir = DOWN;
         if (checkParameterAndSetVar()) {
+            mSecond = 0;
             timer = window.setInterval(timeHandler, interval);
             timing();
         }

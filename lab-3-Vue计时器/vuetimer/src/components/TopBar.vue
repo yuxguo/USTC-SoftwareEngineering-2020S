@@ -86,7 +86,7 @@ export default {
       } else if (this.state === 'pausing') {
         msg = (this.dir === 'up') ? ('暂停正计时 ' + this.initTime) : ('暂停倒计时 ' + this.initTime)
       } else if (this.state === 'end-timing') {
-        msg = (this.dir === 'up') ? ('正计时 ' + this.initTime + '已结束') : ('倒计时 ' + this.initTime + '已结束')
+        msg = (this.dir === 'up') ? ('正计时 ' + this.initTime + ' 已结束') : ('倒计时 ' + this.initTime + ' 已结束')
       }
       return msg
     },
