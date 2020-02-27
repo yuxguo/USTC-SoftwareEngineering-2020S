@@ -1,10 +1,15 @@
 <template>
-    <button class="btn" type="button" :class="btnClass" :id="btnId"><slot></slot></button>
+    <button class="btn" type="button" :class="btnClass" :id="btnId" @click="btnClick"><slot></slot></button>
 </template>
 
 <script>
 export default {
   name: 'ControlBtn',
+  methods: {
+    btnClick: function () {
+      this.$emit(this.btnId)
+    }
+  },
   props: {
     btnClass: {
       type: String,

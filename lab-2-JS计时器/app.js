@@ -205,8 +205,8 @@
         }
         else if (parseInt(hour)>99 || parseInt(minute)>59 || parseInt(second)>59) {
             hour = (parseInt(hour)>99) ? "99" : hour;
-            minute = (parseInt(minute)>99) ? "59" : minute;
-            second = (parseInt(second)>99) ? "59" : second;
+            minute = (parseInt(minute)>59) ? "59" : minute;
+            second = (parseInt(second)>59) ? "59" : second;
             hour = (hour.length == 1) ? "0"+hour : hour;
             minute = (minute.length == 1) ? "0"+minute : minute;
             second = (second.length == 1) ? "0"+second : second;

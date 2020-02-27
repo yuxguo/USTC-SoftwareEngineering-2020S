@@ -1,12 +1,22 @@
 <template>
     <div class="inp-time">
-        <input type="number" value="0" :id="inputTimeId" step="1" ><label :for="inputTimeId"><slot></slot></label>
+        <input type="number" value="0" :id="inputTimeId" step="1" @change="sendMsg" v-model="msg"><label :for="inputTimeId"><slot></slot></label>
     </div>
 </template>
 
 <script>
 export default {
   name: 'InputTime',
+  data: function () {
+    return {
+      msg: '0'
+    }
+  },
+  methods: {
+    sendMsg: function () {
+      this.$emit(this.inputTimeId + '-change', this.msg)
+    }
+  },
   props: {
     inputTimeId: String
   }

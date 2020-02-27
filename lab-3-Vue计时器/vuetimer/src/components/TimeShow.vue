@@ -1,26 +1,10 @@
 <template>
-    <div v-text="curTime" id="time">
-    </div>
+    <div id="time"><slot></slot></div>
 </template>
 
 <script>
 export default {
-  name: 'TimeShow',
-  data: function () {
-    return {
-      hour: 0,
-      minute: 0,
-      second: 0
-    }
-  },
-  computed: {
-    curTime: function () {
-      let mHour = (this.hour < 10) ? ('0' + this.hour.toString()) : this.hour.toString()
-      let mMinute = (this.minute < 10) ? ('0' + this.minute.toString()) : this.minute.toString()
-      let mSecond = (this.second < 10) ? ('0' + this.second.toString()) : this.second.toString()
-      return mHour + ':' + mMinute + ':' + mSecond
-    }
-  }
+  name: 'TimeShow'
 }
 </script>
 
