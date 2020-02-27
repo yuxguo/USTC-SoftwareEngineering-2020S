@@ -34,6 +34,20 @@ export default {
       default: '00:00:00'
     }
   },
+  created: function () {
+    let _this = this
+    document.onkeydown = function (event) {
+      event = event || window.event
+      var code = event.keyCode
+      if (_this.state === 'before-start' && code === 13) {
+        _this.countUpClick()
+      } else if (_this.state === 'timing' && code === 32) {
+        _this.$emit('pause')
+      } else if (_this.state === 'pausing' && code === 32) {
+        _this.$emit('resume')
+      }
+    }
+  },
   methods: {
     hourChange: function (data) {
       this.hour = data

@@ -40,15 +40,6 @@ export default {
     }
   },
   methods: {
-    beforeStart: function () {
-      this.state = 'before-start'
-    },
-    pausing: function () {
-      this.state = 'pasuing'
-    },
-    timing: function () {
-      this.state = 'timing'
-    },
     endTiming: function () {
       this.state = 'end-timing'
     },
