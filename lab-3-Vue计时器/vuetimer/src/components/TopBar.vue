@@ -1,5 +1,9 @@
 <template>
     <div>
+        <hint-show hint-id="hint">la</hint-show>
+        <input-time input-time-id="hour">时</input-time>
+        <input-time input-time-id="minute">分</input-time>
+        <input-time input-time-id="second">秒</input-time>
         <control-btn btn-class="btn1" btn-id="countup">开始正计时</control-btn>
         <control-btn btn-class="btn1" btn-id="countdown">开始倒计时</control-btn>
         <control-btn btn-class="btn1" btn-id="resume">恢复计时器</control-btn>
@@ -10,11 +14,15 @@
 </template>
 
 <script>
+import HintShow from './HintShow'
+import InputTime from './InputTime'
 import ControlBtn from './ControlBtn'
 export default {
   name: 'TopBar',
   components: {
-    ControlBtn
+    ControlBtn,
+    InputTime,
+    HintShow
   }
 }
 </script>
