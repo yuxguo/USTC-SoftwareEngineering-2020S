@@ -1,23 +1,24 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <top-bar></top-bar>
+    <time-show></time-show>
   </div>
 </template>
 
 <script>
+import TopBar from './components/TopBar'
+import TimeShow from './components/TimeShow'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    TopBar,
+    TimeShow
+  }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin: 0px;
 }
 </style>
