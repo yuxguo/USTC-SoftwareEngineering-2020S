@@ -40,6 +40,7 @@
             timer = window.setInterval(timeHandler, interval);
             timing();
         }
+        countup.blur();
     }
     countdown.onclick = function() {
         dir = DOWN;
@@ -48,14 +49,17 @@
             timer = window.setInterval(timeHandler, interval);
             timing();
         }
+        countdown.blur()
     }
     resume.onclick = function() {
         timer = window.setInterval(timeHandler, interval);
         timing();
+        resume.blur();
     }
     pause.onclick = function() {
         window.clearInterval(timer);
         pausing();
+        pause.blur();
     }
     clear.onclick = function() {
         mSecond = 0;
@@ -63,6 +67,7 @@
         curTime = "00:00:00";
         initTime = "00:00:00";
         beforeStart();
+        clear.blur();
     }
     restart.onclick = function() {
         mSecond = 0;
@@ -70,6 +75,7 @@
         window.clearInterval(timer);
         timer = window.setInterval(timeHandler, interval);
         timing();
+        restart.blur();
     }
 
     // 键盘控制
