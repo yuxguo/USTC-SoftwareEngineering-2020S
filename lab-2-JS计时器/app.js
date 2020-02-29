@@ -209,17 +209,17 @@
             hour = (parseInt(hour)>99) ? "99" : hour;
             minute = (parseInt(minute)>59) ? "59" : minute;
             second = (parseInt(second)>59) ? "59" : second;
-            hour = (hour.length == 1) ? "0"+hour : hour;
-            minute = (minute.length == 1) ? "0"+minute : minute;
-            second = (second.length == 1) ? "0"+second : second;
+            hour = (hour.length == 1) ? "0"+hour : parseInt(hour).toString();
+            minute = (minute.length == 1) ? "0"+minute : parseInt(minute).toString();
+            second = (second.length == 1) ? "0"+second : parseInt(second).toString();
             initTime = hour + ":" + minute + ":" + second;
             curTime = (dir == UP) ? "00:00:00" : initTime;
             return true;
         }
         else {
-            hour = (hour.length == 1) ? "0"+hour : hour;
-            minute = (minute.length == 1) ? "0"+minute : minute;
-            second = (second.length == 1) ? "0"+second : second;
+            hour = (hour.length == 1) ? "0"+hour : parseInt(hour).toString();
+            minute = (minute.length == 1) ? "0"+minute : parseInt(minute).toString();
+            second = (second.length == 1) ? "0"+second : parseInt(second).toString();
             initTime = hour + ":" + minute + ":" + second;
             curTime = (dir == UP) ? "00:00:00" : initTime;
             mSecond = 0;
